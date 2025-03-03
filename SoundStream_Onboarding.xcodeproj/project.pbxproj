@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FCE348442D75AEF5005A7345 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FCE348432D75AEF5005A7345 /* SDWebImageSwiftUI */; };
+		FCE348532D75D5A5005A7345 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = FCE348522D75D5A5005A7345 /* SwiftfulUI */; };
+		FCE348562D75D60F005A7345 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = FCE348552D75D60F005A7345 /* SwiftfulRouting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE348532D75D5A5005A7345 /* SwiftfulUI in Frameworks */,
+				FCE348562D75D60F005A7345 /* SwiftfulRouting in Frameworks */,
 				FCE348442D75AEF5005A7345 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +75,8 @@
 			name = SoundStream_Onboarding;
 			packageProductDependencies = (
 				FCE348432D75AEF5005A7345 /* SDWebImageSwiftUI */,
+				FCE348522D75D5A5005A7345 /* SwiftfulUI */,
+				FCE348552D75D60F005A7345 /* SwiftfulRouting */,
 			);
 			productName = SoundStream_Onboarding;
 			productReference = FCE348312D74816D005A7345 /* SoundStream_Onboarding.app */;
@@ -102,6 +108,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FCE348422D75AEF5005A7345 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				FCE348512D75D5A5005A7345 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
+				FCE348542D75D60F005A7345 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FCE348322D74816D005A7345 /* Products */;
@@ -269,6 +277,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -276,6 +285,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "AlexKolch.SoundStream-Onboarding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -298,6 +311,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +319,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "AlexKolch.SoundStream-Onboarding";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,6 +361,22 @@
 				minimumVersion = 3.1.3;
 			};
 		};
+		FCE348512D75D5A5005A7345 /* XCRemoteSwiftPackageReference "SwiftfulUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		FCE348542D75D60F005A7345 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -350,6 +384,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FCE348422D75AEF5005A7345 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		FCE348522D75D5A5005A7345 /* SwiftfulUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE348512D75D5A5005A7345 /* XCRemoteSwiftPackageReference "SwiftfulUI" */;
+			productName = SwiftfulUI;
+		};
+		FCE348552D75D60F005A7345 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCE348542D75D60F005A7345 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
