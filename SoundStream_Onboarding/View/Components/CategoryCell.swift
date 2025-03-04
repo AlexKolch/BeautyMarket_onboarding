@@ -16,9 +16,16 @@ struct CategoryCell: View {
             .font(.callout)
             .padding(.vertical, 8)
             .padding(.horizontal, 10)
+            .themeColour(isSelected: isSelected)
+            .clipShape(.capsule)
+    }
+}
+
+extension View {
+    func themeColour(isSelected: Bool) -> some View {
+        self
             .foregroundStyle(isSelected ? .myBlack : .myWhite)
             .background(isSelected ? .myGreen : .myDarkGray)
-            .clipShape(.capsule)
     }
 }
 

@@ -7,13 +7,15 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+
 ///Загрузчик изображений
 struct ImageLoader: View {
+    
     let urlSrting: String
     var contentMode: ContentMode = .fill
     
     var body: some View {
-        //поместим изображение в прямоугольник чтобы сохранить заполнение картинкой fill и при этом задавать cornerRadius для вью
+        ///поместим изображение в прямоугольник чтобы сохранить заполнение картинкой fill и при этом задавать cornerRadius для вью
         Rectangle()
             .opacity(0.0)
             .overlay {
@@ -32,12 +34,12 @@ fileprivate struct SDWebImageLoader: View {
     var body: some View {
         WebImage(url: URL(string: urlSrting)) { image in
             image.resizable()
-            image.aspectRatio(contentMode: contentMode)
-            image.allowsHitTesting(false)  //запрещаем нажатие на изображение
         } placeholder: {
             Color.gray.opacity(0.3)
         }
         .indicator(.activity)
+        .aspectRatio(contentMode: contentMode)
+        .allowsHitTesting(false) //запрещаем нажатие на изображение
     }
 }
 

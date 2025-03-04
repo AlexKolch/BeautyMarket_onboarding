@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct HomeView: View {
     @State private var currentUser: User?
     @State private var selectedCategory: Category?
-//    @State private var currentProduct: Product
+    @State private var products: [Product] = []
     
     var body: some View {
         ZStack {
@@ -19,6 +20,11 @@ struct HomeView: View {
             ScrollView(.vertical) {
                 LazyVStack(pinnedViews: [.sectionHeaders]) {
                     Section {
+                        VStack {
+                            recentsSection
+                        }
+                        .padding(.horizontal, 16)
+                        
                         ForEach(0..<20) { _ in
                             Rectangle().fill(.yellow)
                                 .frame(width: 200, height: 200)
@@ -41,7 +47,7 @@ struct HomeView: View {
     private func fetchData() async {
         do {
             currentUser = try await DataManager().loadUsers().last
-//            products = try await DataManager().loadProducts()
+            products = try await Array(DataManager().loadProducts().prefix(8)) //берем только первые 8 продукта
         } catch {
             
         }
@@ -80,6 +86,14 @@ private extension HomeView {
         .padding(.vertical, 24)
         .padding(.leading, 8) //отступ всего стека от края экрана
         .background(.myBlack)
+    }
+    
+    var recentsSection: some View {
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+            if let product {
+                RecentsCell(imageName: product.firstImage, title: product.title)
+            }
+        }
     }
 }
 
