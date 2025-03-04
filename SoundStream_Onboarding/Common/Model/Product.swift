@@ -23,7 +23,7 @@ struct Product: Codable, Identifiable {
     let thumbnail: String
 }
 
-enum Category: String, Codable {
+enum Category: String, Codable, CaseIterable {
     case beauty = "beauty"
     case fragrances = "fragrances"
     case furniture = "furniture"
