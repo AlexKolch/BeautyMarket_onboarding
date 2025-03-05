@@ -22,6 +22,11 @@ struct HomeView: View {
                     Section {
                         VStack {
                             recentsSection
+                            
+                            if let product = products.first {
+                                ConfigHeadlineCell(product)
+                            }
+                          
                         }
                         .padding(.horizontal, 16)
                         
@@ -94,6 +99,19 @@ private extension HomeView {
                 RecentsCell(imageName: product.firstImage, title: product.title)
             }
         }
+    }
+    
+    @ViewBuilder func ConfigHeadlineCell(_ product: Product) -> some View {
+        HeadlineCell(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category.rawValue.capitalized,
+            title: product.title,
+            subtitle: product.description) {
+                print("infoBtn Tapped")
+            } cellOrCardTapped: {
+                print("cellOrCard Tapped")
+            }
     }
 }
 

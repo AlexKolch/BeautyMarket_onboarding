@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>79</string>
+					<string>84</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>78</string>
+					<string>83</string>
 					<key>Timestamp</key>
-					<string>762788875.504351</string>
+					<string>762861984.30319</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>33</string>
+					<string>38</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>32</string>
+					<string>37</string>
 					<key>Timestamp</key>
-					<string>762788875.50437</string>
+					<string>762861984.303175</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -95,6 +95,73 @@
 			</dict>
 			<key>title</key>
 			<string>закрепляем header вверху экрана</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SoundStream_Onboarding/View/Components/HeadlineCell.swift</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>DVTDocumentLocation</string>
+			</dict>
+			<key>title</key>
+			<string>выравнивает HStack по левому краю</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>62</string>
+					<key>EndingLineNumber</key>
+					<string>61</string>
+					<key>StartingColumnNumber</key>
+					<string>24</string>
+					<key>StartingLineNumber</key>
+					<string>61</string>
+					<key>Timestamp</key>
+					<string>762862055.580713</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SoundStream_Onboarding/View/Components/HeadlineCell.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>    .onTapGesture { infoBtnTapped?() }</string>
+				<key>leading</key>
+				<string>                            .font(.title3)
+                            .padding(4) //увеличили область нажатия
+                        </string>
+				<key>trailing</key>
+				<string>
+                            .offset(x: -4) //выровнили относительно текстов
+                            .frame(maxWidth: .infinity, alignment: .leading) //отодвигает элементы друг от друга
+</string>
+			</dict>
+			<key>title</key>
+			<string>Recognize info image tapped</string>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>

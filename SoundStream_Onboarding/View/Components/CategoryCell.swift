@@ -21,13 +21,6 @@ struct CategoryCell: View {
     }
 }
 
-extension View {
-    func themeColour(isSelected: Bool) -> some View {
-        self
-            .foregroundStyle(isSelected ? .myBlack : .myWhite)
-            .background(isSelected ? .myGreen : .myDarkGray)
-    }
-}
 
 #Preview {
     ZStack {
