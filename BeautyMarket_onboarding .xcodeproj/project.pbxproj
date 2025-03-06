@@ -13,13 +13,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FCE348312D74816D005A7345 /* SoundStream_Onboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundStream_Onboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE348312D74816D005A7345 /* BeautyMarket_onboarding .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BeautyMarket_onboarding .app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FCE348332D74816D005A7345 /* SoundStream_Onboarding */ = {
+		FCE348332D74816D005A7345 /* BeautyMarket_onboarding  */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SoundStream_Onboarding;
+			path = "BeautyMarket_onboarding ";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -41,7 +41,7 @@
 		FCE348282D74816D005A7345 = {
 			isa = PBXGroup;
 			children = (
-				FCE348332D74816D005A7345 /* SoundStream_Onboarding */,
+				FCE348332D74816D005A7345 /* BeautyMarket_onboarding  */,
 				FCE348322D74816D005A7345 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,7 +49,7 @@
 		FCE348322D74816D005A7345 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FCE348312D74816D005A7345 /* SoundStream_Onboarding.app */,
+				FCE348312D74816D005A7345 /* BeautyMarket_onboarding .app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +57,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FCE348302D74816D005A7345 /* SoundStream_Onboarding */ = {
+		FCE348302D74816D005A7345 /* BeautyMarket_onboarding  */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FCE3483F2D74816E005A7345 /* Build configuration list for PBXNativeTarget "SoundStream_Onboarding" */;
+			buildConfigurationList = FCE3483F2D74816E005A7345 /* Build configuration list for PBXNativeTarget "BeautyMarket_onboarding " */;
 			buildPhases = (
 				FCE3482D2D74816D005A7345 /* Sources */,
 				FCE3482E2D74816D005A7345 /* Frameworks */,
@@ -70,16 +70,16 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FCE348332D74816D005A7345 /* SoundStream_Onboarding */,
+				FCE348332D74816D005A7345 /* BeautyMarket_onboarding  */,
 			);
-			name = SoundStream_Onboarding;
+			name = "BeautyMarket_onboarding ";
 			packageProductDependencies = (
 				FCE348432D75AEF5005A7345 /* SDWebImageSwiftUI */,
 				FCE348522D75D5A5005A7345 /* SwiftfulUI */,
 				FCE348552D75D60F005A7345 /* SwiftfulRouting */,
 			);
 			productName = SoundStream_Onboarding;
-			productReference = FCE348312D74816D005A7345 /* SoundStream_Onboarding.app */;
+			productReference = FCE348312D74816D005A7345 /* BeautyMarket_onboarding .app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FCE348302D74816D005A7345 /* SoundStream_Onboarding */,
+				FCE348302D74816D005A7345 /* BeautyMarket_onboarding  */,
 			);
 		};
 /* End PBXProject section */
@@ -268,7 +268,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SoundStream_Onboarding/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BeautyMarket_onboarding /Preview Content\"";
 				DEVELOPMENT_TEAM = 527U829H6E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -283,7 +283,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AlexKolch.SoundStream-Onboarding";
+				PRODUCT_BUNDLE_IDENTIFIER = "AlexKolch.BeautyMarket-onboarding-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -302,7 +302,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SoundStream_Onboarding/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BeautyMarket_onboarding /Preview Content\"";
 				DEVELOPMENT_TEAM = 527U829H6E;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -317,7 +317,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AlexKolch.SoundStream-Onboarding";
+				PRODUCT_BUNDLE_IDENTIFIER = "AlexKolch.BeautyMarket-onboarding-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -341,7 +341,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FCE3483F2D74816E005A7345 /* Build configuration list for PBXNativeTarget "SoundStream_Onboarding" */ = {
+		FCE3483F2D74816E005A7345 /* Build configuration list for PBXNativeTarget "BeautyMarket_onboarding " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCE348402D74816E005A7345 /* Debug */,
