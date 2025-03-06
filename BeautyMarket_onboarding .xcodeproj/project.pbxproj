@@ -97,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FCE3482C2D74816D005A7345 /* Build configuration list for PBXProject "SoundStream_Onboarding" */;
+			buildConfigurationList = FCE3482C2D74816D005A7345 /* Build configuration list for PBXProject "BeautyMarket_onboarding " */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -332,7 +332,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FCE3482C2D74816D005A7345 /* Build configuration list for PBXProject "SoundStream_Onboarding" */ = {
+		FCE3482C2D74816D005A7345 /* Build configuration list for PBXProject "BeautyMarket_onboarding " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FCE3483D2D74816E005A7345 /* Debug */,
