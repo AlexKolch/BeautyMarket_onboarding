@@ -25,6 +25,10 @@ struct Product: Codable, Identifiable {
     var firstImage: String {
         images.first ?? Constants.randomImage
     }
+    
+    var _brand: String {
+           brand ?? "Unknown"
+       }
 }
 
 enum Category: String, Codable, CaseIterable {
@@ -32,4 +36,11 @@ enum Category: String, Codable, CaseIterable {
     case fragrances = "fragrances"
     case furniture = "furniture"
     case groceries = "groceries"
+}
+
+///структура данных для строки товаров
+struct ProductRow: Identifiable {
+    let id = UUID()
+    let titleBrand: String
+    let product: [Product]
 }

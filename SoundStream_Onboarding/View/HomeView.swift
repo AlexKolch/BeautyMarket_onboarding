@@ -12,33 +12,32 @@ struct HomeView: View {
     @State private var currentUser: User?
     @State private var selectedCategory: Category?
     @State private var products: [Product] = []
+    @State private var productsRows: [ProductRow] = []
     
     var body: some View {
         ZStack {
             Color.myBlack.ignoresSafeArea()
             
             ScrollView(.vertical) {
+                ///сделаем ленивый стэк, потому что лист с товарами(listRows)  может быть огромен
                 LazyVStack(pinnedViews: [.sectionHeaders]) {
                     Section {
-                        VStack {
+                        VStack(spacing: 16.0) {
                             recentsSection
+                                .padding(.horizontal, 16)
                             
                             if let product = products.first {
                                 ConfigHeadlineCell(product)
+                                    .padding(.horizontal, 16)
                             }
-                          
-                        }
-                        .padding(.horizontal, 16)
-                        
-                        ForEach(0..<20) { _ in
-                            Rectangle().fill(.yellow)
-                                .frame(width: 200, height: 200)
+
+                            listRows
                         }
                     } header: {
                         header
                     }
                 }.padding(.top, 8)
-              
+                
             }
             .scrollIndicators(.hidden)
             .clipped() //обрезаем чтобы ScrollView не выходил за зону header-а
@@ -50,11 +49,20 @@ struct HomeView: View {
     }
     
     private func fetchData() async {
+        guard products.isEmpty else { return }
         do {
             currentUser = try await DataManager().loadUsers().last
             products = try await Array(DataManager().loadProducts().prefix(8)) //берем только первые 8 продукта
-        } catch {
             
+            var rows: [ProductRow] = [] //массив под бренды и их товары
+            let allBrands = Set(products.map { $0._brand }) //получили брэнды и отсеили повторяющиеся
+            for brand in allBrands {
+                let products = products.filter { $0.brand == brand } //Продукты каждого конкретного бренда
+                rows.append(ProductRow(titleBrand: brand.capitalized, product: products))
+            }
+            productsRows = rows
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }
@@ -73,7 +81,7 @@ private extension HomeView {
                         }
                 }
             }.frame(width: 35, height: 35) //кладем изображение в стэк чтобы установить сразу размер под него, иначе ScrollView заполняет собой все пространство пока нет изображения
-          
+            
             ScrollView(.horizontal) {
                 HStack(spacing: 8.0) {
                     ForEach(Category.allCases, id: \.self) { category in
@@ -97,6 +105,9 @@ private extension HomeView {
         NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
             if let product {
                 RecentsCell(imageName: product.firstImage, title: product.title)
+                    .asButton(.press) {
+                        
+                    }
             }
         }
     }
@@ -112,6 +123,31 @@ private extension HomeView {
             } cellOrCardTapped: {
                 print("cellOrCard Tapped")
             }
+    }
+    
+    var listRows: some View {
+        ForEach(productsRows) { row in
+            VStack {
+                Text(row.titleBrand)
+                    .font(.title.weight(.semibold))
+                    .foregroundStyle(.myWhite)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                
+                ScrollView(.horizontal) {
+                    HStack(alignment: .top, spacing: 16.0) {
+                        ForEach(row.product) { product in
+                            BrandRowCell(imageName: product.firstImage, title: product.title)
+                                .asButton(.press) {
+                                    
+                                }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .scrollIndicators(.never)
+            }
+        }
     }
 }
 

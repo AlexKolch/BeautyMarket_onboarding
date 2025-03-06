@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>84</string>
+					<string>92</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>83</string>
+					<string>91</string>
 					<key>Timestamp</key>
-					<string>762861984.30319</string>
+					<string>762885940.343423</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -59,13 +59,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>38</string>
+					<string>37</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>37</string>
+					<string>36</string>
 					<key>Timestamp</key>
-					<string>762861984.303175</string>
+					<string>762885940.343456</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -90,7 +90,7 @@
 				<key>trailing</key>
 				<string>                    }
                 }.padding(.top, 8)
-              
+                
 </string>
 			</dict>
 			<key>title</key>
@@ -162,6 +162,74 @@
 			</dict>
 			<key>title</key>
 			<string>Recognize info image tapped</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SoundStream_Onboarding/View/Components/BrandRowCell.swift</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>DVTDocumentLocation</string>
+			</dict>
+			<key>title</key>
+			<string>задаем размер картинки и ячейке</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>57</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>56</string>
+					<key>Timestamp</key>
+					<string>762885940.343467</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SoundStream_Onboarding/View/HomeView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            var rows: [ProductRow] = [] //массив под бренды и их товары
+</string>
+				<key>leading</key>
+				<string>            products = try await Array(DataManager().loadProducts().prefix(8)) //берем только первые 8 продукта
+            
+</string>
+				<key>trailing</key>
+				<string>            let allBrands = Set(products.map { $0._brand }) //получили брэнды и отсеили повторяющиеся
+            for brand in allBrands {
+                let products = products.filter { $0.brand == brand } //Продукты каждого конкретного бренда
+</string>
+			</dict>
+			<key>title</key>
+			<string>Логика получения продуктов брендов</string>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>
