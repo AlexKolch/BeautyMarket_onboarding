@@ -33,7 +33,7 @@ struct Product: Codable, Identifiable {
     static var mock: Product {
             Product(
                 id: 123,
-                title: "Example product title",
+                title: "Iphone 9",
                 description: "This is some mock product description that goes here.",
                 category: .beauty,
                 price: 999,

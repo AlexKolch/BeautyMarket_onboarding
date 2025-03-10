@@ -11,6 +11,7 @@ struct DetailView: View {
     
     var product: Product = .mock
     var user: User = .mock
+    @Binding var products: [Product]
     
     var body: some View {
         ZStack {
@@ -34,13 +35,26 @@ struct DetailView: View {
                         onSharePressed: nil
                     )
                     .padding(.horizontal, 16)
+                    
+                    ForEach(products) { product in
+                            ProductCell(
+                                brand: product._brand,
+                                title: product.title,
+                                imageName: product.firstImage,
+                                imageSize: 50,
+                                onTapCell: {},
+                                onTapMore: {}
+                            )
+                            .padding(.leading, 16)
+                    }
                 }
+                .scrollIndicators(.hidden)
             }
-            .scrollIndicators(.hidden)
+            .toolbar(.hidden, for: .navigationBar)
         }
     }
 }
 
 #Preview {
-    DetailView()
+    DetailView(products: .constant([Product.mock, Product(id: 11, title: "ef", description: "ef", category: .beauty, price: 12.0, discountPercentage: 23.0, rating: 32.0, stock: 1, brand: "efddd", images: [Constants.randomImage, Constants.randomImage, Constants.randomImage], thumbnail: Constants.randomImage)]))
 }

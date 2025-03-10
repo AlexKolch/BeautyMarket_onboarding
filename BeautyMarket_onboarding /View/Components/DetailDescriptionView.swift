@@ -22,7 +22,7 @@ struct DetailDescriptionView: View {
             Text(desriptionText)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
-            desriptionSection
+            madeForYouSection
             Text(subheadline)
             buttonsRow
         }
@@ -33,7 +33,7 @@ struct DetailDescriptionView: View {
 }
 
 private extension DetailDescriptionView {
-    var desriptionSection: some View {
+    var madeForYouSection: some View {
         HStack {
             Image(systemName: "applelogo")
                 .font(.title3)
