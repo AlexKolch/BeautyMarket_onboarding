@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftfulUI
 
-struct DetailHeaderCell: View {
+struct DetailHeaderView: View {
     
     var height: CGFloat = 300
     let title: String
@@ -45,7 +45,7 @@ struct DetailHeaderCell: View {
     ZStack {
         Color.myBlack.ignoresSafeArea()
         ScrollView {
-            DetailHeaderCell(title: "Huawei P30", subtitle: "Huawei", imageName: Constants.randomImage)
+            DetailHeaderView(title: "Huawei P30", subtitle: "Huawei", imageName: Constants.randomImage)
         }
         .ignoresSafeArea()
     }

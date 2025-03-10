@@ -11,7 +11,8 @@ import SwiftUI
 struct SoundStream_OnboardingApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            DetailView()
+//            HomeView()
         }
     }
 }
