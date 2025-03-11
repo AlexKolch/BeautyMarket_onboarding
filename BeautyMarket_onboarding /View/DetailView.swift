@@ -11,6 +11,8 @@ struct DetailView: View {
     
     var product: Product = .mock
     var user: User = .mock
+    @State private var showNavBar: Bool = false
+   // @State private var offset: CGFloat = 0 //нужен был для определения положения geometryReader
     @Binding var products: [Product]
     
     var body: some View {
@@ -25,6 +27,11 @@ struct DetailView: View {
                         subtitle: product._brand,
                         imageName: product.thumbnail
                     )
+                    .readingFrame { frame in
+//                        offset = frame.maxY
+                        showNavBar = frame.maxY < 116.6
+                    }
+                    //  Text("\(offset)").background(.red) // для geometryReader информация 110.6
                     DetailDescriptionView(
                         desriptionText: product.description,
                         userName: user.firstName,
@@ -48,10 +55,31 @@ struct DetailView: View {
                             .padding(.leading, 16)
                     }
                 }
-                .scrollIndicators(.hidden)
+         
             }
-            .toolbar(.hidden, for: .navigationBar)
+            .scrollIndicators(.hidden)
+         
+            ZStack {
+                Text(product.title)
+                    .font(.headline)
+                    .padding(.vertical, 20)
+                    .frame(maxWidth: .infinity)
+                    .background(.myBlack)
+                    .offset(y: showNavBar ? 0 : -40)
+                    .opacity(showNavBar ? 1 : 0)
+                Image(systemName: "chevron.left")
+                    .font(.title3)
+                    .padding(10)
+                    .background(showNavBar ? Color.clear : .myGray.opacity(0.7))
+                    .clipShape(.circle)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading, 16)
+            }
+            .foregroundStyle(.myWhite)
+            .frame(maxHeight: .infinity, alignment: .top)
+            .animation(.smooth(duration: 0.2), value: showNavBar) //анимация смены NavBar
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
