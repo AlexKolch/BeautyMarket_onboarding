@@ -7,6 +7,7 @@ My work for beauty shop with fake REST API for Placeholder JSON Data
  
  Used in a project:
 * SwiftUI
+* MVVM
 * Async/await
 * Animations
 * REST API
