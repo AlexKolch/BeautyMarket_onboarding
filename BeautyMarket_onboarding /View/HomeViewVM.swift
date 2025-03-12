@@ -36,7 +36,7 @@ final class HomeViewVM: ObservableObject {
             let allBrands = Set(products.map { $0._brand }) //получили брэнды и отсеили повторяющиеся
             for brand in allBrands {
                 let products = products.filter { $0.brand == brand } //Продукты каждого конкретного бренда
-                rows.append(ProductRow(titleBrand: brand.capitalized, product: products))
+                rows.append(ProductRow(titleBrand: brand.capitalized, product: eightProducts))
             }
             await MainActor.run {
                 productsRows = rows
