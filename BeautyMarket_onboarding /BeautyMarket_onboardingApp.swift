@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 @main
 struct SoundStream_OnboardingApp: App {
     var body: some Scene {
         WindowGroup {
-//            DetailView()
-            HomeView()
+            RouterView { router in
+                HomeView(vm: HomeViewVM(router: router))
+            }
         }
     }
 }
+
+

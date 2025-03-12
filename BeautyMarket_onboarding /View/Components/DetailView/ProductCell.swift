@@ -40,16 +40,7 @@ struct ProductCell: View {
                 }
                 .padding(.trailing, 4)
         }
-//        .overlay(alignment: .trailing) {
-//            Image(systemName: "ellipsis")
-//                .foregroundStyle(.myWhite)
-//                .padding(16)
-//                .background(.black.opacity(0.001))
-//                .onTapGesture {
-//                    onTapMore?()
-//                }
-//                .padding(.trailing, 4)
-//        }
+        .background(.black.opacity(0.001))
         .onTapGesture {
             onTapCell?()
         }

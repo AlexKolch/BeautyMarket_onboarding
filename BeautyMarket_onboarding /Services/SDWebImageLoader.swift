@@ -39,7 +39,7 @@ fileprivate struct SDWebImageLoader: View {
         }
         .indicator(.activity)
         .aspectRatio(contentMode: contentMode)
-        .allowsHitTesting(false) //запрещаем нажатие на изображение
+//        .allowsHitTesting(false) //запрещаем нажатие на изображение
     }
 }
 

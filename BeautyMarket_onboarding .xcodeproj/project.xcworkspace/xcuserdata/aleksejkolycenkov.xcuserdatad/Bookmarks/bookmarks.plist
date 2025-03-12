@@ -281,15 +281,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>70</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>31</string>
+					<string>34</string>
 					<key>StartingColumnNumber</key>
-					<string>23</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>31</string>
+					<string>33</string>
 					<key>Timestamp</key>
-					<string>763364456.567602</string>
+					<string>763411534.496944</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -305,15 +305,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string> showNavBar = frame.maxY &lt; 1</string>
+				<string>                        showNavBar = frame.maxY &lt; 140
+</string>
 				<key>leading</key>
 				<string>                    .readingFrame { frame in
 //                        offset = frame.maxY
-                       </string>
+</string>
 				<key>trailing</key>
-				<string>16.6
-                    }
-                    //  Text("\(offset)").background(.red) // для geometryReader информация 110.6
+				<string>                    }
+                    //  Text("\(offset)").background(.red) // для geometryReader информация
+                    DetailDescriptionView(
 </string>
 			</dict>
 			<key>title</key>

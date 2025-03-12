@@ -19,7 +19,7 @@ struct DetailHeaderView: View {
         Rectangle()
             .opacity(0)
             .overlay(
-                ImageLoader(urlSrting: imageName)
+                ImageLoader(urlSrting: imageName, contentMode: .fill)
             )
             .overlay(
                 VStack(alignment: .leading, spacing: 8) {

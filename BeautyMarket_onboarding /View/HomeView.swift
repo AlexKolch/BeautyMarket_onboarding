@@ -7,12 +7,11 @@
 
 import SwiftUI
 import SwiftfulUI
+import SwiftfulRouting
 
 struct HomeView: View {
-    @State private var currentUser: User?
-    @State private var selectedCategory: Category?
-    @State private var products: [Product] = []
-    @State private var productsRows: [ProductRow] = []
+   
+    @StateObject var vm: HomeViewVM
     
     var body: some View {
         ZStack {
@@ -26,7 +25,7 @@ struct HomeView: View {
                             recentsSection
                                 .padding(.horizontal, 16)
                             
-                            if let product = products.first {
+                            if let product = vm.products.first {
                                 ConfigHeadlineCell(product)
                                     .padding(.horizontal, 16)
                             }
@@ -34,7 +33,7 @@ struct HomeView: View {
                             listRows
                         }
                     } header: {
-                        header
+                        headerCategory
                     }
                 }.padding(.top, 8)
                 
@@ -43,41 +42,22 @@ struct HomeView: View {
             .clipped() //обрезаем чтобы ScrollView не выходил за зону header-а
         }
         .task {
-            await fetchData()
+            await vm.fetchData()
         }
         .toolbar(.hidden, for: .navigationBar) //скрываем navigationBar
-    }
-    
-    private func fetchData() async {
-        guard products.isEmpty else { return }
-        do {
-            currentUser = try await DataManager().loadUsers().last
-            products = try await Array(DataManager().loadProducts().prefix(8)) //берем только первые 8 продукта
-            
-            var rows: [ProductRow] = [] //массив под бренды и их товары
-            let allBrands = Set(products.map { $0._brand }) //получили брэнды и отсеили повторяющиеся
-            for brand in allBrands {
-                let products = products.filter { $0.brand == brand } //Продукты каждого конкретного бренда
-                rows.append(ProductRow(titleBrand: brand.capitalized, product: products))
-            }
-            productsRows = rows
-        } catch {
-            print(error.localizedDescription)
-        }
     }
 }
 
 private extension HomeView {
     
-    var header: some View {
+    var headerCategory: some View {
         HStack(spacing: 0.0) {
             ZStack {
-                if let currentUser {
+                if let currentUser = vm.currentUser {
                     ImageLoader(urlSrting: currentUser.image)
                         .background(.myWhite)
                         .clipShape(.circle)
-                        .onTapGesture {
-                            //To Do tap
+                        .onTapGesture { //Tap on avatar
                         }
                 }
             }.frame(width: 35, height: 35) //кладем изображение в стэк чтобы установить сразу размер под него, иначе ScrollView заполняет собой все пространство пока нет изображения
@@ -86,10 +66,10 @@ private extension HomeView {
                 HStack(spacing: 8.0) {
                     ForEach(Category.allCases, id: \.self) { category in
                         CategoryCell(title: category.rawValue.capitalized,
-                                     isSelected: category == selectedCategory
+                                     isSelected: category == vm.selectedCategory
                         )
                         .onTapGesture {
-                            selectedCategory = category
+                            vm.selectedCategory = category
                         }
                     }
                 }.padding(.leading, 16) //отступ от аватарки
@@ -102,13 +82,20 @@ private extension HomeView {
     }
     
     var recentsSection: some View {
-        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: vm.products) { product in
             if let product {
                 RecentsCell(imageName: product.firstImage, title: product.title)
                     .asButton(.press) {
-                        
+                        goToProductDetails(product) //переход на детальный экран
                     }
             }
+        }
+    }
+    
+    func goToProductDetails(_ product: Product) {
+        guard let currentUser = vm.currentUser else {return}
+        vm.router.showScreen(.push) { _ in
+            DetailView(product: product, user: currentUser, products: vm.products)
         }
     }
     
@@ -121,12 +108,12 @@ private extension HomeView {
             subtitle: product.description) {
                 print("infoBtn Tapped")
             } cellOrCardTapped: {
-                print("cellOrCard Tapped")
+                goToProductDetails(product)
             }
     }
     
     var listRows: some View {
-        ForEach(productsRows) { row in
+        ForEach(vm.productsRows) { row in
             VStack {
                 Text(row.titleBrand)
                     .font(.title.weight(.semibold))
@@ -139,7 +126,7 @@ private extension HomeView {
                         ForEach(row.product) { product in
                             BrandRowCell(imageName: product.firstImage, title: product.title)
                                 .asButton(.press) {
-                                    
+                                    goToProductDetails(product)
                                 }
                         }
                     }
@@ -152,5 +139,7 @@ private extension HomeView {
 }
 
 #Preview {
-    HomeView()
+    RouterView { router in
+        HomeView(vm: HomeViewVM(router: router))
+    }
 }
